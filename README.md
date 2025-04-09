@@ -4,7 +4,7 @@ A Python-based utility to download, parse, and filter US population estimates fr
 The script `parse-seer-us-population-estimates.py` is designed to download the SEER population estimates, parse the data, and filter it based on a specific criteria. The script uses [Polars](https://pola.rs/) for data manipulation. The script can take in a [Polars expression](https://docs.pola.rs/user-guide/expressions/) for data filteration. See below for some examples on the different types of filtration that can be done with the script using Polars expressions.
 
 ## Example filters
-Please consult the [SEER data dictionary](https://seer.cancer.gov/popdata/popdic.html) to understand the different filter expressions that are possible.
+Please consult the [SEER data dictionary](https://seer.cancer.gov/popdata/popdic.html) to understand the different filtering conditions that are possible. Then craft a [Polars expression](https://docs.pola.rs/user-guide/expressions/) to specify the condition.
 
 ### Example 1: Single year (2011) - White, Non-Hispanic, Female, Ages 50-75
 By default, this is the filtration that is currently implemented in the script.
@@ -32,7 +32,7 @@ filter_expr = (
 
 ### Example 3: All available years - Black males, age 65
 ```python
-year_filter=None
+year_filter = None
 filter_expr = (
     (pl.col("Race_Code") == 2) &  # Black
     (pl.col("Sex_Code") == 1) &   # Male
