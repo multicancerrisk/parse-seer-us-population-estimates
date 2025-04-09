@@ -1,2 +1,2 @@
-# parse-seer-us-population-estimates
-A utility to parse and filter US population estimates from SEER
+# Parse SEER US population estimates
+A Python-based utility to download, parse, and filter US population estimates from SEER. The script ingests the 1990-2023 county-level US population data from SEER, containing information at a single-year age level and is further stratified by 4 expanded races by origin (https://seer.cancer.gov/popdata/download.html). The data dictionary can be found here: https://seer.cancer.gov/popdata/popdic.html
